@@ -335,11 +335,11 @@ object Benchmark {
         .flatMap { query =>
           try {
             query.newDataFrame().queryExecution.logical.collect {
-              case UnresolvedRelation(t) => t.table
+              case ur: UnresolvedRelation => ur.name
             }
           } catch {
             // ignore the queries that can't be parsed
-            case e: Exception => Seq()
+            case e: Exception => None
           }
         }
         .distinct

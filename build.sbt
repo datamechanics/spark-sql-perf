@@ -5,16 +5,14 @@ name := "spark-sql-perf"
 
 organization := "com.databricks"
 
-scalaVersion := "2.11.12"
-
-crossScalaVersions := Seq("2.11.12","2.12.8")
+scalaVersion := "2.12.8"
 
 sparkPackageName := "databricks/spark-sql-perf"
 
 // All Spark Packages need a license
 licenses := Seq("Apache-2.0" -> url("http://opensource.org/licenses/Apache-2.0"))
 
-sparkVersion := "2.4.0"
+sparkVersion := "3.0.0-preview2"
 
 sparkComponents ++= Seq("sql", "hive", "mllib")
 
